@@ -1,0 +1,32 @@
+{
+  "name": "PHP & Composer",
+  "dockerFile": "Dockerfile",
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolder}/.devcontainer/daemon.json",
+      "target": "/etc/docker/daemon.json",
+      "type": "bind"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "chunsen.bracket-select",
+        "liuhuapiaoyuan.li-gpt-commit",
+        "bmewburn.vscode-intelephense-client",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  },
+  "containerEnv": {
+    "TZ": "Asia/Shanghai"
+  },
+  "remoteUser": "root",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/app",
+  "postCreateCommand": "service nginx start && php-fpm -D && service docker start && docker compose -f .devcontainer/docker-compose.yml up -d",
+  "runArgs": [
+    "--privileged"
+  ]
+}

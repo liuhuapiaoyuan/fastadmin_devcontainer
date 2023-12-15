@@ -1,0 +1,14 @@
+version: "3.3" # You can use a different version if needed
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql/:/var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fastadmin
+      MYSQL_USER: fastadmin
+      MYSQL_PASSWORD: root
