@@ -1,6 +1,6 @@
 {
   "name": "PHP & Composer",
-  "dockerFile": "Dockerfile",
+  "image":"liuhuapiaoyuan/fastadmin_devcontainer",
   "mounts": [
     {
       "source": "${localWorkspaceFolder}/.devcontainer/daemon.json",

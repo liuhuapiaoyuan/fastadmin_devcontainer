@@ -1,4 +1,4 @@
 {
-    "registry-mirrors": [
-        ]
+  "registry-mirrors": [],
+  "storage-driver": "overlay2"
 }

@@ -26,12 +26,7 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install mysqli \
         && docker-php-ext-install soap  
 
-# # 安装mysql
-# RUN apt-get update \
-# 	&& docker-php-ext-install mysqli \
-# 	&& docker-php-ext-enable mysqli\
-# 	&& docker-php-ext-install pdo_mysql \
-# 	&& docker-php-ext-enable pdo_mysql
+
 
 # 安装 Nginx 和 Git
 RUN apt-get update && \
@@ -51,6 +46,5 @@ WORKDIR /
 
 # 使用 root 用户运行
 USER root
-
 
 CMD php-fpm -D
